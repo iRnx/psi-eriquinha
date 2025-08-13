@@ -328,47 +328,10 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  
+  <script src="js/faq.js"></script>
+  <script src="js/hamburguer.js"></script>
 
-
-  <script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const isActive = button.classList.contains('active');
-
-      // Fecha todas as outras
-      document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.classList.remove('active');
-        btn.nextElementSibling.style.display = 'none';
-        btn.querySelector('.icon').textContent = '+';
-      });
-
-      // Abre a clicada
-      if (!isActive) {
-        button.classList.add('active');
-        button.nextElementSibling.style.display = 'block';
-        button.querySelector('.icon').textContent = '–';
-      }
-    });
-  });
-</script>
-
-<!-- Hamburger -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-
-    // Alterna ícones manualmente para maior compatibilidade
-    toggle.querySelector('.icon-hamburger').style.display =
-      menu.classList.contains('active') ? 'none' : 'inline';
-    toggle.querySelector('.icon-close').style.display =
-      menu.classList.contains('active') ? 'inline' : 'none';
-  });
-});
-</script>
 
 </body>
 </html>
