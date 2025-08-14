@@ -525,13 +525,103 @@ body {
   background-clip: text;
 }
 
+/* ===== FOOTER ===== */
 .footer {
-    background: var(--h1-bemvindo);
-    color: #fff;
-    padding: 30px;
-    text-align: center;
-    font-size: 1rem;
+  background: var(--h1-bemvindo);
+  color: #fff;
 }
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr; /* sobre | links | contato */
+  gap: 32px;
+  align-items: start;
+}
+
+.footer__logo {
+  width: 140px;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+  border-radius: 12px; /* opcional */
+}
+
+.footer__about p {
+  margin: 6px 0;
+  color: rgba(255,255,255,.92);
+}
+
+.footer__links h4,
+.footer__contact h4 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer__links ul,
+.footer__contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li + li,
+.footer__contact li + li {
+  margin-top: 8px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  opacity: .9;
+  transition: opacity .2s ease, text-decoration-color .2s ease;
+  text-underline-offset: 3px;
+}
+.footer a:hover,
+.footer a:focus { opacity: 1; text-decoration: underline; }
+
+.footer__contact i {
+  font-size: 1rem;
+  margin-right: 8px;
+  color: var(--pistache); /* destaque */
+  vertical-align: -1px;
+}
+
+/* Social cores */
+.footer .bi-whatsapp { color: #25D366; }
+.footer .bi-instagram {
+  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.22);
+  padding: 16px 24px 22px;
+  text-align: center;
+  font-size: .95rem;
+}
+.footer__bottom p { margin: 6px 0; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 960px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr; /* sobre | (links/contato) */
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__container {
+    grid-template-columns: 1fr; /* uma coluna */
+    text-align: center;
+  }
+  .footer__logo { margin: 0 auto 12px; }
+  .footer__links ul li { display: inline-block; margin: 6px 12px; }
+}
+
 
 @media (max-width: 937px) {
 
@@ -630,4 +720,7 @@ body {
   .footer-cta__content { width: 100%; }
   .contact-cards { grid-template-columns: 1fr; }
   .footer-portrait { width: 220px; }
+
+
+
 }
